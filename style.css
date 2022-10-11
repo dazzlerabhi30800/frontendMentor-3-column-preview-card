@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+:root {
+  --Bright-orange: hsl(31, 77%, 52%);
+  --Dark-cyan: hsl(184, 100%, 22%);
+  --Very-dark-cyan: hsl(179, 100%, 13%);
+
+  /* ### Neutral */
+
+  --Transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+  /* Background headings button */
+  --Very-light-gray: hsl(0, 0%, 95%);
+  /* Fonts */
+  --font-Heading: "Big Shoulders Display", sans-serif;
+  --font-Para: "Lexend Deca", sans-serif;
+}
+
+body {
+  background: #062a2a;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  padding: 1rem;
+  background: #062a2a;
+  justify-content: center;
+}
+
+.card--container {
+  display: grid;
+  grid-template-columns: repeat(1, 350px);
+  margin: 10px 0;
+}
+.card {
+  min-width: 300px;
+  width: 80%;
+  max-width: 400px;
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card > img {
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+}
+.card > .heading {
+  color: var(--Very-light-gray);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: var(--font-Heading);
+}
+.card > p {
+  color: var(--Transparent-white-paragraphs);
+  font-family: var(--font-Para);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.card > .btn {
+  margin: 2rem 0 0;
+  width: fit-content;
+  padding: 8px 1rem;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  font-family: var(--font-Para);
+  background: var(--Very-light-gray);
+  transition: all 0.3s linear;
+}
+.card  .btn:hover {
+  background: rgba(255,255,255, 0.75);
+}
+
+.btn-1 {
+  color: var(--Bright-orange);
+}
+.btn-2 {
+  color: var(--Dark-cyan);
+}
+.btn-3 {
+  color: var(--Very-dark-cyan);
+}
+.card:nth-child(1) {
+  background: var(--Bright-orange);
+  width: 100%;
+}
+.card:nth-child(2) {
+  background: var(--Dark-cyan);
+  width: 100%;
+}
+.card:nth-child(3) {
+  background: var(--Very-dark-cyan);
+  width: 100%;
+}
+
+@media (hover: hover) {
+  .card > .btn {
+    cursor: pointer;
+  }
+}
+
+
+@media Screen and (min-width: 950px) {
+  main {
+    align-items: center;
+  }
+  .card--container {
+    grid-template-columns: repeat(3, 350px);
+    height: 450px;
+  }
+  .card {
+    height: 350px;
+    padding: 1.5rem;
+  }
+  .card:nth-child(1) {
+    border-radius: 10px 0 0 10px;
+  }
+  .card:nth-child(3) {
+    border-radius: 0 10px 10px 0;
+  }
+  .card > p {
+    width: 320px;
+  }
+  .card > .btn {
+    margin: 3rem 0 0;
+  }
+}
